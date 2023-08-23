@@ -1,3 +1,7 @@
+<?php 
+if( isset($_POST['search']) ) $search = $_POST['search']; // if a previuos search was done
+$dirListsJSON = 'lists'; // where JSON files are located
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <title>Invar Serapis - Intranet</title>
+    <title>DocPoster</title>
     <style>
       .navbar { background-color: #21618c; color: #fff !important; }
       .navbar-brand { color: #fff !important; }
@@ -21,10 +25,6 @@
 
 <?php 
 include './navbar.php';
-if( isset($_POST['search']) ) $search = $_POST['search'];
-
-$lists_json = file_get_contents('list.json');
-$lists = json_decode( $lists_json , false );
 
 if(isset($search) && $search != ""){
   include './search.php';
@@ -34,7 +34,7 @@ if(isset($search) && $search != ""){
 ?>
 
   <footer>
-    Poster Docs |  Last update <?php echo date("d/m/Y",filemtime('./list.json')); ?> <br>
+    Poster Docs |  Last update <?php echo date("d/m/Y",filemtime('./lists/')); ?> <br>
   </footer>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

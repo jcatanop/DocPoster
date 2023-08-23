@@ -5,8 +5,8 @@
       <p class="align-middle pt-3 px-4" style="font-size:1.1em;">DocPoster</p>
     </div>
 
-    <form class="d-flex" name='fSearch' action='<?php echo $_SERVER['PHP_SELF']; ?>' method='POST'>
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar" name="search" autofocus>
+    <form class="d-flex" name='fSearch' action='<?php echo $_SERVER['PHP_SELF'] ?>' method='POST'>
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar" name="search" autofocus value='<?php if(isset($search)) echo $search ?>' >
       <button class="btn btn-outline-info" type="submit"  onCLick="document.fSearch.submit();">Search</button>
     </form>
   </div>
