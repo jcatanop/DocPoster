@@ -4,11 +4,11 @@ This is a web environment tool for publishing files, where the titles are shown 
 
 DocPoster is useful for small workgroups or companies that want to share documents as a guide to adopt policies or standards among different users.
 
-# Requirements
+## Requirements
 
 This script needs PHP >7.0 and an HTTP server like Apache or equivalent.
 
-# Installation
+## Installation
 
 Download this repository and move its content to the desired folder.
 
